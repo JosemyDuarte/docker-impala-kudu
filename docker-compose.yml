@@ -1,0 +1,90 @@
+version: '3'
+services:
+  zookeeper:
+#    build:
+#      context: ../docker-zookeeper
+#      dockerfile: Dockerfile
+    image: josemyd/zookeeper:latest
+    ports:
+    - 2181:2181
+    - 2888:2888
+    - 3888:3888
+    networks:
+    - parrot
+
+  hadoop:
+#    build:
+#      context: ../docker-hadoop
+#      dockerfile: Dockerfile
+    image: josemyd/hadoop:latest
+    links:
+    - zookeeper
+    networks:
+    - parrot
+    ports:
+    - 50070:50070
+    - 50075:50075
+    - 8020:8020
+    - 8042:8042
+    - 8088:8088
+    - 8188:8188
+    - 19888:19888
+
+  kudu-master:
+#    build:
+#      context: ../docker-kudu
+#      dockerfile: Dockerfile
+    image: josemyd/kudu:latest
+    networks:
+      parrot:
+        aliases:
+        - kudu
+    cap_add:
+    - SYS_TIME
+    links:
+    - hadoop
+    ports:
+    - 7051:7051
+    - 8051:8051
+    environment:
+      KUDU_MASTER: "true"
+
+  kudu-tserver:
+#    build:
+#      context: ../docker-kudu
+#      dockerfile: Dockerfile
+    image: josemyd/kudu:latest
+    links:
+    - hadoop
+    networks:
+    - parrot
+    cap_add:
+    - SYS_TIME
+    ports:
+    - 7050:7050
+    - 8050:8050
+    environment:
+      KUDU_MASTER: "false"
+
+  impala:
+    build:
+      context: .
+      dockerfile: Dockerfile
+#    image: josemyd/impala-kudu:latest
+    links:
+    - zookeeper
+    networks:
+    - parrot
+    ports:
+    - 21000:21000
+    - 21050:21050
+    - 25000:25000
+    - 25010:25010
+    - 25020:25020
+
+networks:
+  default:
+    external:
+      name: parrot
+  parrot:
+    driver: bridge

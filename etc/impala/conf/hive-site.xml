@@ -1,0 +1,321 @@
+<configuration>
+
+  <property>
+    <name>hive.support.concurrency</name>
+    <value>true</value>
+  </property>
+	<property>
+		<name>javax.jdo.option.ConnectionURL</name>
+		<value>jdbc:derby:;databaseName=/var/lib/hive/metastore/metastore_db;create=true</value>
+		<description>JDBC connect string for a JDBC metastore. (CDH defaults).</description>
+	</property>
+
+	<property>
+		<name>javax.jdo.option.ConnectionDriverName</name>
+		<value>org.apache.derby.jdbc.EmbeddedDriver</value>
+		<description>Driver class name for a JDBC metastore. (CDH defaults).</description>
+	</property>
+  <property>
+￼
+Josemy Duarte13:02
+me pasaste lo mismo q yo te pase?
+13:02
+-.-
+￼
+Jordi Basagaña13:02
+no te leo demasiado
+13:02
+xD
+13:02
+te he paso el punto en concreto
+13:02
+xD
+￼
+Josemy Duarte13:04
+Me pongo con eso, tu ponte con lo del docker-compose e impala, te parece?
+￼
+Jordi Basagaña13:04
+si
+13:04
+heredo de esta no? https://hub.docker.com/_/tomcat/
+￼
+Jordi Basagaña13:13
+@Josemy Duarte
+￼
+Josemy Duarte13:14
+te gusta mi nombre?
+￼
+Jordi Basagaña13:14
+no, prefiero que me contesten xD
+￼
+Josemy Duarte13:15
+ah coño no te habia leido
+￼
+Jordi Basagaña13:15
+voy a comer, despues hacermos un dibujito del resultado
+￼
+Josemy Duarte13:15
+how it feels mothe fucker!
+13:15
+jaja
+￼
+Jordi Basagaña13:15
+bueno...de lo que se pretende
+13:15
+quien eres?
+13:15
+XD
+￼
+Josemy Duarte13:15
+coño ahora con Alzheimer?? :boca_abierta:
+￼
+Jordi Basagaña13:15
+señor deje de molestar
+￼
+Josemy Duarte13:16
+porq te interesa lo del tomcat?
+13:16
+eso es lo q voy a ponerme a hacer yo
+13:16
+tu vas con lo de impala
+13:16
+no habiamos quedado asi?
+￼
+Jordi Basagaña13:16
+eh eh eh eh eh
+￼
+Josemy Duarte13:37
+como te harias pull de la imagen del ecr?
+13:38
+docker pull 970587013463.dkr.ecr.us-west-2.amazonaws.com/impala-kudu
+13:38
+??
+￼
+Jordi Basagaña13:38
+si, no?
+13:38
+si estas logado deberia
+￼
+Josemy Duarte13:38
+pero lei algo de q el login funciona por 12 horas
+13:38
+o el token
+13:38
+no es asi?
+13:39
+es decir, ya yo sigo logueado de por vida con ecr?
+￼
+Jordi Basagaña13:39
+creo que no
+￼
+Josemy Duarte13:39
+y cada persona debera hacer ese mismo login para poder hacer pull de nuestras imagenes
+￼
+Jordi Basagaña13:39
+que caduca
+13:39
+lo normal es hacer login operacion logout
+13:39
+login
+operacione
+logout
+￼
+Josemy Duarte13:40
+un poco rollo, no? es decir, para develop como vas a automatizar ese login?
+13:40
+si el token caduca/url cambia
+￼
+Jordi Basagaña13:41
+lo que te passe e sun password
+13:41
+no un token
+￼
+Josemy Duarte13:41
+y ese password no caduca?
+￼
+Jordi Basagaña13:42
+este diria que no
+13:42
+de todas formas tengo que leer mucho mas
+13:42
+de ecr
+13:42
+sorry
+￼
+Josemy Duarte13:42
+vale
+13:42
+no problem
+13:43
+para q sepas, el docker ya esta en nuestro repo
+13:43
+https://bitbucket.org/rocketroi/docker-impala-kudu/src/master/
+Repository in RocketROI
+docker-impala-kudu
+Open pull requests
+0
+Branches
+1
+Watchers
+2
+Forks
+0
+Version control system
+Git
+￼docker-impala-kuduAñadido por Bitbucket Cloud
+￼
+Jordi Basagaña13:43
+me acabo de encontrar una iso de office
+13:43
+en el server de test
+13:43
+sera peor de lo que pensava
+13:43
+porque parece que hay un samba
+13:43
+xD
+￼
+Josemy Duarte13:43
+botalo
+13:43
+jaja
+13:44
+ten en cuenta q nadie sabe lo q hay alli
+13:45
+jajaja
+13:45
+q es lo q quiere?
+13:45
+permisos de ftp?
+￼
+Jordi Basagaña13:47
+a tomar viento
+￼
+Josemy Duarte13:47
+y como te ibas a meter sin pass?
+￼
+Jordi Basagaña13:47
+ahora mismo no voy a buscar comose desarolla en prestashop wordpress o estas cosas
+￼
+Josemy Duarte13:47
+y si el tiene el pass porq no lo hace el?
+13:49
+y ya se fue Eric?
+￼
+Jordi Basagaña13:49
+todos hacemos d emas y de menos
+13:49
+pero que no sea una constante
+￼
+Josemy Duarte15:17
+me puedes crear un repo para el batch-dwn en el ecr?
+15:17
+ticket?
+￼
+Jordi Basagaña15:18
+voy
+15:21
+970587013463.dkr.ecr.us-west-2.amazonaws.com/batch-dwn
+￼
+Josemy Duarte15:21
+muchas gracias señor
+15:21
+buen trabajo
+￼
+Jordi Basagaña15:21
+XD
+15:21
+no s ete puede decir nada
+￼
+Josemy Duarte16:15
+normalmnt ves el vaso medio vacio
+16:15
+yo soy mas de ver de donde saco agua para llenar el vaso (ni vacio ni lleno), solo se q lo quiero llenar
+16:16
+coño no se decirte, no recuerdo un pre/post
+￼
+Jordi Basagaña16:16
+XD joder
+16:16
+xD
+￼
+Josemy Duarte16:17
+y no te pregunte.. como siguio tu mama?
+￼
+Jordi Basagaña16:17
+veo que estoy yendo a mejor a medida que ha pasado la semana
+16:17
+mal
+16:17
+npo se como se llama
+16:17
+ok
+16:17
+le dieron 2 medicamentos
+16:17
+los antibioticos a veces le sientan mal
+16:18
+pues le sentaron mal, pero no por alergia, sino por la reaccion entre los dos
+16:18
+bueno por suerte estaba mi hermano y ahora ya esta
+￼
+Josemy Duarte16:20
+me alegra saber q salio bien
+16:21
+crees q en un nuevo trabajo, aunque el ambiente sea genial, le veras los fallos y te sentiras mal tambien?
+16:26
+ya.. pero preguntaba para saber como crees q "verias el vaso" en otro lugar
+jueves, 11 de octubre
+￼
+Jordi Basagaña12:37
+user jordi.bass@gmail.com
+12:37
+pass pepemy
+Hoy
+￼
+Jordi Basagaña09:07
+create database rocket;
+create table test
+(
+id int not null,
+code string,
+primary key(id)
+)
+partition by hash partitions 8
+stored as KUDU
+TBLPROPERTIES (
+'kudu.master_addresses' = '127.0.0.1' ,
+'kudu.num_tablet_replicas' = '1'
+);
+INSERT INTO test VALUES(1,'pepe');
+select * from test;
+￼
+Jordi Basagaña09:59
+me  he propuesto venir mejorar, ir
+09:59
+no se rnegativo
+09:59
+mierda
+09:59
+xD
+Cargando historial...
+Entrada de mensaje
+
+Enviar mensaje a @Jordi Basagaña
+    <name>hive.metastore.uris</name>
+    <value>thrift://localhost:9083</value>
+  </property>
+  <property>
+    <name>hive.server2.thrift.port</name>
+    <value>10000</value>
+  </property>
+  <property>
+    <name>hive.server2.webui.port</name>
+    <value>10002</value>
+  </property>
+  <property>
+    <name>hive.zookeeper.quorum</name>
+    <description>Zookeeper quorum used by Hive's Table Lock Manager</description>
+    <value>zookeeper</value>
+  </property>
+</configuration>
