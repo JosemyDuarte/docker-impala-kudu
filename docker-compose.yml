@@ -4,7 +4,7 @@ services:
 #    build:
 #      context: ../docker-zookeeper
 #      dockerfile: Dockerfile
-    image: josemyd/zookeeper:latest
+    image: josemyd/zookeeper:3.5.4
     ports:
     - 2181:2181
     - 2888:2888
@@ -16,7 +16,7 @@ services:
 #    build:
 #      context: ../docker-hadoop
 #      dockerfile: Dockerfile
-    image: josemyd/hadoop:latest
+    image: josemyd/hadoop:2.6.0-cdh5.15.1
     links:
     - zookeeper
     networks:
@@ -34,7 +34,7 @@ services:
 #    build:
 #      context: ../docker-kudu
 #      dockerfile: Dockerfile
-    image: josemyd/kudu:latest
+    image: josemyd/kudu:1.7.0-cdh5.15.1
     networks:
       parrot:
         aliases:
@@ -53,7 +53,7 @@ services:
 #    build:
 #      context: ../docker-kudu
 #      dockerfile: Dockerfile
-    image: josemyd/kudu:latest
+    image: josemyd/kudu:1.7.0-cdh5.15.1
     links:
     - hadoop
     networks:
@@ -67,10 +67,10 @@ services:
       KUDU_MASTER: "false"
 
   impala:
-    build:
-      context: .
-      dockerfile: Dockerfile
-#    image: josemyd/impala-kudu:latest
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+    image: josemyd/impala-kudu:2.12.0-cdh5.15.1
     links:
     - zookeeper
     networks:
