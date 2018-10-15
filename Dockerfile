@@ -1,4 +1,4 @@
-FROM josemyd/centos-jdk
+FROM josemyd/centos-jdk:jdk-8
 
 USER root
 
