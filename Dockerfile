@@ -2,10 +2,9 @@ FROM josemyd/centos-jdk:jdk-8
 
 USER root
 
-ADD cloudera-impala-kudu.repo /etc/yum.repos.d/
 ADD cloudera-cdh5.repo /etc/yum.repos.d/
 
-RUN rpm --import http://archive.cloudera.com/beta/impala-kudu/redhat/7/x86_64/impala-kudu/RPM-GPG-KEY-cloudera \
+RUN rpm --import https://archive.cloudera.com/cdh5/redhat/7/x86_64/cdh/RPM-GPG-KEY-cloudera \
     && yum install -y python-setuptools sudo hadoop-libhdfs \
     impala impala-catalog impala-server hive hive-metastore \
     impala-state-store impala-shell \

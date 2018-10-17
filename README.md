@@ -27,6 +27,7 @@ Once started you'll be able to access to the following UIs:
 ### Available tags
 
 - Impala 2.12.0 ([2.12.0-cdh5.15.1](https://github.com/JosemyDuarte/docker-impala-kudu/blob/2.12.0-cdh5.15.1/Dockerfile), [latest](https://github.com/JosemyDuarte/docker-impala-kudu/blob/master/Dockerfile))
+- Impala 2.11.0 ([2.11.0-cdh5.14.2](https://github.com/JosemyDuarte/docker-impala-kudu/blob/2.11.0-cdh5.14.2/Dockerfile)
 
 ### Copyright
 
